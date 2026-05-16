@@ -232,8 +232,8 @@ const auth = getAuth(app);
 const db = getDatabase(app);
 const provider = new GoogleAuthProvider();
 
-const TOTAL_MEMBERS = 37;
-const REVEAL_THRESHOLD = 19;
+const TOTAL_MEMBERS = 38;
+const REVEAL_THRESHOLD = 20;
 // Current members (37) — used for join vote count
 const MEMBERS = [
   "AB Gupta","Abhi Panchu","Abhay Manay","Abhilash","Abhinav Grover",
@@ -258,7 +258,8 @@ const BOOT_MEMBERS = [
   "Yash","Yug","Zeb"
 ];
 const CANDIDATES = [
-  { id: "yug", name: "Yug" }
+  { id: "yug", name: "Yug" },
+  { id: "janav", name: "Jaanav" }
 ];
 
 let currentUser = null;
@@ -334,7 +335,7 @@ function renderBoot() {
     const pct = Math.round((v/max)*100);
     return `<div class="player submitted">
       <div class="player-info">
-        <div class="player-name">#${i+1}  ${name}</div>
+        <div class="player-name">#${i+1}  ${name}</div>
         <div class="bar-track"><div class="bar-fill red" style="width:${pct}%"></div></div>
       </div>
       <span class="vote-count">${v}</span>
